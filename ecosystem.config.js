@@ -1,9 +1,15 @@
-module.exports = [{
-    script: './dist/main.js',
-    name: 'myblog_server',
-    exec_mode: 'cluster',
-    instances: 2
-  }, {
-    script: 'worker.js',
-    name: 'worker'
-  }]
+module.exports = {
+    "apps" : [{
+        "name": "server",
+        "script": "./dist/main.js",
+        "instances": '1', // 앱 인스턴스의 수
+        "watch": true,
+        "env": { // 환경변수. 모든 배포 환경에서 공통으로 사용한다.
+            "PORT": 9090,
+            "NODE_ENV": 'development',
+          },
+        "env_production" : {
+            "NODE_ENV": "production"
+        }
+    }]
+}
