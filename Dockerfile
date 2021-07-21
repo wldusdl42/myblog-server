@@ -14,9 +14,11 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package*.json ./
 RUN npm install
+RUN npm run start:dev
 
 # Bundle app source
 COPY . .
 
-EXPOSE 4000
-CMD ["npm", "run", "start:dev"]
+EXPOSE 9090
+# CMD ["npm", "run", "start:dev"]
+CMD ["pm2-runtime", "ecosystem.config.js"]
