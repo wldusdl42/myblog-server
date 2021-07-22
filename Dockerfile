@@ -11,15 +11,14 @@ MAINTAINER Jiyeon Kim <wldusdl34@gmail.com>
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
+# Bundle app source
 COPY package*.json ./
 COPY tsconfig.build.json ./
-RUN npm install pm2 -g
-RUN npm install
-
-# Bundle app source
 COPY . .
 
+# Install app dependencies
+RUN npm install pm2 -g
+RUN npm install
 RUN npm run build
 
 EXPOSE 9090
