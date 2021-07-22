@@ -16,12 +16,13 @@ COPY package*.json ./
 COPY tsconfig.build.json ./
 RUN npm install pm2 -g
 RUN npm install
-RUN npm run build
 
 # Bundle app source
 COPY . .
 
+RUN npm run build
+
 EXPOSE 9090
 # CMD ["npm", "run", "start:dev"]
 # CMD ["pm2-runtime", "ecosystem.config.js"]
-CMD ["pm2-runtime", "npm", "run", "start"]
+CMD ["pm2-runtime", "--name", "server" "npm", "run", "start"]
