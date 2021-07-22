@@ -23,4 +23,4 @@ COPY . .
 
 EXPOSE 9090
 # CMD ["npm", "run", "start:dev"]
-CMD ["pm2-runtime", "./dist/main.js"]
+CMD ["pm2-runtime", "npm", "run", "start"]
