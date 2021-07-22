@@ -23,4 +23,4 @@ COPY . .
 
 EXPOSE 9090
 # CMD ["npm", "run", "start:dev"]
-CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+CMD ["pm2-runtime", "ecosystem.config.js"]
