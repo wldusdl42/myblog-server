@@ -13,6 +13,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package*.json ./
+COPY tsconfig.build.json ./
 RUN npm install
 RUN npm run build
 
