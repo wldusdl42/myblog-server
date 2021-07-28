@@ -12,8 +12,6 @@ MAINTAINER Jiyeon Kim <wldusdl34@gmail.com>
 WORKDIR /usr/src/app
 
 # Bundle app source
-COPY package*.json ./
-COPY tsconfig.build.json ./
 COPY . .
 
 # Install app dependencies
