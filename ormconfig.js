@@ -1,7 +1,7 @@
 module.exports = {
     "type": "mysql",
     "host": "mysql",
-    "port": 3306,
+    "port": 3307,
     "username": "root",
     "password": "Dnflwlq@34",
     "database": "myblog",
