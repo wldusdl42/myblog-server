@@ -14,9 +14,9 @@ WORKDIR /usr/src/app
 # Bundle app source
 COPY . .
 
-# Install app dependencies
-RUN npm install pm2 -g
-RUN npm install
+# # Install app dependencies
+# RUN npm install pm2 -g
+# RUN npm install
 RUN npm run build
 
 EXPOSE 9090
