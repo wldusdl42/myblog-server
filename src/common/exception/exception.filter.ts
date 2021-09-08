@@ -11,8 +11,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
             exception instanceof HttpException
             ? exception.getStatus()
             : HttpStatus.INTERNAL_SERVER_ERROR;
-
-        console.log("AllExceptionsFilter")
+        console.log("AllExceptionsFilter : ", request.url)
 
         response
             .status(status)

@@ -10,15 +10,15 @@ export class UsersService {
         private userRepository: Repository<User>,
     ) {}
 
-    async findUser(user_id: string): Promise<any> {
-        return this.userRepository.find({"id": user_id})
+    async findUser(email: string): Promise<any> {
+        return await this.userRepository.find({"email": email})
     }
 
     async signUp(user: any) {
         var newUser = new User();
-        newUser.id = user.id;
+        newUser.email = user.email;
         newUser.passwd = user.passwd;
-        newUser.token = user.token;
+        newUser.retoken = user.retoken;
         return await this.userRepository.insert(user);
     }
 }
